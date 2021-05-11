@@ -6,7 +6,11 @@ get '/random-cat' do
   erb(:index)
 end
 
-get '/named-cat' do
-  params[:name] == nil || params[:name] == ''  ? @name = 'Charlie' : @name = params[:name]
+post '/named-cat' do
+  params[:name] == nil || params[:name] == '' ? @name = 'Charlie' : @name = params[:name]
   erb(:index)
+end
+
+get'/cat-form' do
+  erb :cat_form
 end
